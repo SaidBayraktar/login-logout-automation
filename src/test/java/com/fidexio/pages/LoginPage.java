@@ -18,4 +18,6 @@ public class LoginPage {
     @FindBy (xpath = "//button[@type=\"submit\"]")
     public WebElement logInButton;
 
+    public WebElement title;
+
 }
