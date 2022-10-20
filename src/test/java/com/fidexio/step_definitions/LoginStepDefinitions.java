@@ -1,6 +1,7 @@
 package com.fidexio.step_definitions;
 
 import com.fidexio.pages.LoginPage;
+import com.fidexio.utilities.BrowserUtils;
 import com.fidexio.utilities.ConfigurationReader;
 import com.fidexio.utilities.Driver;
 import com.github.javafaker.Faker;
@@ -70,7 +71,7 @@ public class LoginStepDefinitions {
 
     @Then("{string} should be *displayed*")
     public void should_be_displayed(String string) {
-        Assert.assertEquals(string, loginPage.wrongUserOrPassWordBtn.getText());
+       Assert.assertEquals("not same",string,loginPage.wrongUserOrPassWordBtn.getText());
     }
 
 
@@ -89,16 +90,16 @@ public class LoginStepDefinitions {
 
 
     @Then("User should enter the ENTER button on the keyword.")
-    public void user_should_enter_the_button_on_the_keyword(String string) {
-        loginPage.passWord.clear();
-        loginPage.passWord.sendKeys(ConfigurationReader.getProperty("ppmanager"+Keys.ENTER));
+    public void user_should_enter_the_ENTER_button_on_the_keyword() {
+       loginPage.passWord.clear();
+       loginPage.passWord.sendKeys(ConfigurationReader.getProperty("ppmanager")+Keys.ENTER);
 
     }
 
     @Then("User able to login to the main page")
     public void user_able_to_login_to_the_main_page() {
         Assert.assertEquals(Driver.getDriver().getTitle(),ConfigurationReader.getProperty("expHomeTitle"));
-
+        BrowserUtils.waitFor(5);
     }
 
 
@@ -111,5 +112,7 @@ public class LoginStepDefinitions {
     @When("User able to locate\\/see the {string} link")
     public void userAbleToLocateSeeTheLink(String arg0) {
     }
+
+
 
 }

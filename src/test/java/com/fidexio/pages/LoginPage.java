@@ -19,9 +19,14 @@ public class LoginPage {
     @FindBy (xpath = "//button[@type=\"submit\"]")
     public WebElement logInButton;
 
-    @FindBy (className = "alert_alert-danger")
+    @FindBy (className = "alert")
     public WebElement wrongUserOrPassWordBtn;
 
+    @FindBy(xpath = "//span[@class=\"oe_topbar_name\"]")
+    public WebElement userDropdown;
+
+    @FindBy (xpath="//a[@data-menu=\"logout\"]")
+    public WebElement logoutBtn;
 
 
 

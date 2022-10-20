@@ -1,4 +1,4 @@
-@wip
+
 Feature: Login Functionality
   Agile story: As a user, I should be able to log in so that I can land on homepage.
 
@@ -6,27 +6,24 @@ Feature: Login Functionality
   Background: User already logged in
     Given User able to go to the homepage
 
-
   #Scenario: Login Functionality
     #When user is on the login page
     #Then user should be able to type valid credentials
     #Then user should be able to login
 
 
-
-  Scenario: Users can log in with valid credentials.{SalesManager}
+  Scenario: Users can log in with valid credentials.
 
     When User as a SalesManager able to write valid credentials in the username and password box.
     Then User able to click on the log in button
-    And User able to click on the log in button
+    And User able to login to the main page
 
 
-  Scenario: Users can log in with valid credentials.{PosManager}
+  Scenario: Users can log in with valid credentials.
 
     When User as a PosManager able to write valid credentials in the username and password box.
     Then User able to click on the log in button
-    And User able to click on the log in button
-
+    And User able to login to the main page
 
   Scenario: Verify that user can not log in with invalid credentials and "Wrong login/password" is displayed
     When User able to type invalid credentials
@@ -50,7 +47,8 @@ Feature: Login Functionality
     And User able to login to the main page
 
 
-  @Test7
+
+
   #Scenario: Verify user able to click on the "Reset password" link to go to ‘reset password’ page
     #When User able to locate/see the Reset password link
     #Then User able to click on the "Reset password" link
