@@ -19,5 +19,10 @@ public class LoginPage {
     @FindBy (xpath = "//button[@type=\"submit\"]")
     public WebElement logInButton;
 
+    @FindBy (className = "alert_alert-danger")
+    public WebElement wrongUserOrPassWordBtn;
+
+
+
 
 }
